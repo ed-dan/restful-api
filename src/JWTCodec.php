@@ -18,7 +18,6 @@ class JWTCodec
         $payload = $this->base64UrlEncode(json_encode($payload));
 
         $signature = hash_hmac("sha256", $header . "." . $payload, $this->key , true);
-
         $signature = $this->base64UrlEncode($signature);
 
         return $header . "." . $payload . "." . $signature;
