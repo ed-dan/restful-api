@@ -69,6 +69,7 @@ class Auth
 
     public function authenticateAccessToken(): bool
     {
+        
         if (! preg_match("/^Bearer\s+(.*)$/", $_SERVER["HTTP_AUTHORIZATION"], $matches)) {
             http_response_code(400);
             echo json_encode([
