@@ -1,5 +1,6 @@
 <?php
 
-	echo 'RESTAPI';
+header("Location: http://restapi.local/register");
+die();
 
 ?>
