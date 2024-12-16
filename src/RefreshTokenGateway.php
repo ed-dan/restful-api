@@ -4,7 +4,7 @@ class RefreshTokenGateway
 {
     private PDO $conn;
 
-    public function __construct(Database $database, private string $key)
+    public function __construct(Database $database, private string $key) 
     {
         $this->conn = $database->getConnection();
     }
