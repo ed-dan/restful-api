@@ -1,9 +1,12 @@
 <?php
 
+use \gateways\UserGateway;
+use \config\JWTCodec;
+
+
 class Auth 
 {
     public ?string $url_id;
-
     private int $user_id;
     
     public function __construct(private UserGateway $user_gateway, private JWTCodec $codec)

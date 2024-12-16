@@ -1,5 +1,7 @@
 <?php
 
+namespace config;
+
 class JWTCodec
 {
     public function __construct(private string $key)

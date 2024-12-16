@@ -1,5 +1,7 @@
 <?php
 
+use gateways\TaskGateway;
+
 class TaskController
 {
     public function __construct(private TaskGateway $gateway, private int $user_id)

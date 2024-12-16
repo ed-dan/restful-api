@@ -1,5 +1,10 @@
 <?php
 
+namespace gateways;
+
+use \PDO;
+use \config\Database;
+
 class TaskGateway
 {
     private PDO $conn;

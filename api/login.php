@@ -1,8 +1,10 @@
 <?php
 
 declare(strict_types=1);
-
 require __DIR__ . "/bootstrap.php";
+
+use \config\{Database, JWTCodec};
+use \gateways\{TaskGateway, UserGateway, RefreshTokenGateway};
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
@@ -29,8 +31,7 @@ if ($resourse != 'login') {
 
 $user_data = (array) json_decode(file_get_contents("php://input"), true);
 
-if (! array_key_exists("username", $user_data) or 
-    ! array_key_exists("password", $user_data)) {
+if (! array_key_exists("password", $user_data)) {
     
     http_response_code(400);
     echo json_encode([

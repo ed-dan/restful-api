@@ -2,6 +2,9 @@
  
 declare(strict_types = 1);
 
+use \config\{Database, JWTCodec};
+use \gateways\{TaskGateway, UserGateway, RefreshTokenGateway};
+
 require __DIR__ . "/bootstrap.php";
 
 $database = new Database($_ENV["DB_HOST"], $_ENV["DB_NAME"], $_ENV["DB_USER"], $_ENV["DB_PASS"]);

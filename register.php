@@ -3,6 +3,8 @@
 require __DIR__ . "/vendor/autoload.php";
 require __DIR__ . "/register-form.html";
 
+use \config\Database;
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);

@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+use \config\{Database, JWTCodec};
+use \gateways\{RefreshTokenGateway, UserGateway};
+
+
 require __DIR__ . "/bootstrap.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {

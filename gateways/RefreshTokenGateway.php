@@ -1,5 +1,10 @@
 <?php
 
+namespace gateways;
+
+use \PDO;
+use \config\Database;
+
 class RefreshTokenGateway
 {
     private PDO $conn;
