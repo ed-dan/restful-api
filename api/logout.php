@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 $user_data = (array) json_decode(file_get_contents("php://input"), true);
 
+//var_dump($user_data);
 if (! array_key_exists("token", $user_data)) {
     
     http_response_code(400);

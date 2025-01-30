@@ -3,6 +3,7 @@
         "psr-4": {
             "": "src/",
             "config\\": "./config",
+            "exceptions\\": "./exceptions",
             "gateways\\": "./gateways"
         } 
     },

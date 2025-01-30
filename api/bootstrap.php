@@ -1,6 +1,5 @@
 <?php
 
-
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 set_error_handler('ErrorHandler::HandleError');

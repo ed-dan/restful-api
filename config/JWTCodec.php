@@ -2,6 +2,9 @@
 
 namespace config;
 
+use \exceptions\InvalidSignatureException;
+use \exceptions\TokenExpireException;
+
 class JWTCodec
 {
     public function __construct(private string $key)
@@ -29,7 +32,7 @@ class JWTCodec
     {
         if (preg_match("/^(?<header>.+)\.(?<payload>.+)\.(?<signature>.+)$/", $token, $matches) !== 1){
                 
-            throw new InvalidArgumentException("invalid token format");
+            throw new \InvalidArgumentException("invalid token format");
         }
 
         $signature = hash_hmac("sha256", $matches["header"] . "." . $matches["payload"], $this->key, true);

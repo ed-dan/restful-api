@@ -52,13 +52,19 @@ class TaskGateway
 
     public function createForUser(int $user_id, array $data): string
     {
-        $sql = 'INSERT INTO tasks (name, priority, is_completed, user_id) 
-                VALUES (:name, :priority, :is_completed, :user_id)';
+        $sql = 'INSERT INTO tasks (id, name, priority, is_completed, user_id) 
+                VALUES (:id, :name, :priority, :is_completed, :user_id)';
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(':name', $data['name'], PDO::PARAM_STR);
         $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 
+        if(empty($data['id']))
+            $stmt->bindValue(':id', null, PDO::PARAM_NULL);
+        else{
+            $stmt->bindValue(':id', $data['id'], PDO::PARAM_INT);
+        }
+            
         if(empty($data['priority']))
             $stmt->bindValue(':priority', null, PDO::PARAM_NULL);
         else

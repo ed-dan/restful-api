@@ -2,7 +2,8 @@
 
 use \gateways\UserGateway;
 use \config\JWTCodec;
-
+use \exceptions\InvalidSignatureException;
+use \exceptions\TokenExpireException;
 
 class Auth 
 {
